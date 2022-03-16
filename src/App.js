@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // const khayes = {
 //   color: "rgb(97,218,251)",
@@ -23,6 +23,8 @@ function App() {
       <NewReact hola="ja hobar hobe shikhte thaki INsha'Allah"></NewReact>
       <NewReact hola="Allah amk dhoirjo dharon er toufiq dik"></NewReact>
       <NewReact hola="ameen"></NewReact> */}
+
+      <UserOfAPI></UserOfAPI>
     </div>
   );
 
@@ -43,6 +45,37 @@ function App() {
         <h2>You have counted {count} time</h2>
         <button onClick={() => setCount(count + 1)}>Increase</button>
         <button onClick={() => setCount(count - 1)}>Increase</button>
+      </div>
+    );
+  }
+
+  function UserOfAPI() {
+    const [users, callingUser] = useState([]);
+
+    useEffect(() => {
+      fetch("https://restcountries.com/v3.1/all")
+        .then((res) => res.json())
+        .then((data) => callingUser(data));
+    }, []);
+
+    return (
+      <div>
+        <h1>Learing loading dynamic data</h1>
+        {users.map((user) => showUser(user))}
+      </div>
+    );
+  }
+
+  function showUser(props) {
+    console.log(props);
+    return (
+      <div>
+        <section id="container">
+          <div>
+            <h3>Name: {props.name.common}</h3>
+            <img src={props.flags.png} alt="" />
+          </div>
+        </section>
       </div>
     );
   }
