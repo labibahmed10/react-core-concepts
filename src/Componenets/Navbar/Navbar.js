@@ -1,30 +1,22 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import About from "../About/About";
-import Friend from "../Friends/Friends";
-import Home from "../Home/Home";
-import NotFound from "../NotFound/NotFound";
+import { Link } from "react-router-dom";
+import CustomLink from "../CustomLink/CustomLink";
+
 import "./Navbar.css";
 const Navbar = () => {
   return (
     <div>
       <ul className="navbar">
         <li>
-          <a href="/">Home</a>
+          <CustomLink to="/">Home</CustomLink>
         </li>
         <li>
-          <a href="/about">About</a>
+          <CustomLink to="/about">About</CustomLink>
         </li>
         <li>
-          <a href="/friends">Friends</a>
+          <CustomLink to="/friends">Friends</CustomLink>
         </li>
       </ul>
-      {/* <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/friend" element={<Friend></Friend>}></Route>
-        <Route path="/about" element={<About></About>}></Route>
-        <Route path="*" element={<NotFound> </NotFound>}></Route>
-      </Routes> */}
     </div>
   );
 };

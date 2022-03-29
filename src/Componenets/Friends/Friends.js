@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SingleFriend from "../SingleFriend/SingleFriend";
 
-const Friend = () => {
+const Friends = () => {
   const [friends, setFriends] = useState([]);
 
   useEffect(() => {
@@ -9,6 +9,7 @@ const Friend = () => {
       .then((res) => res.json())
       .then((data) => setFriends(data));
   }, []);
+
   return (
     <div>
       <h1>Me as a friend advicing you not to spend more time in social media</h1>
@@ -22,4 +23,4 @@ const Friend = () => {
   );
 };
 
-export default Friend;
+export default Friends;
