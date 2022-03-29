@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: slategrey;
+  padding: 20px;
+  margin: 0;
+}
+
+.navbar li {
+  list-style: none;
+  padding: 5px;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 10px;
+  color: aliceblue;
+}
+
+.navbar a:hover {
+  background-color: rgba(250, 235, 215, 0.219);
+  border-radius: 10px;
+}
